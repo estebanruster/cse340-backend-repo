@@ -1,31 +1,162 @@
-html,
-body {
-    background-color: lightblue;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --body-background-color: rgb(173, 216, 230);
+    --body-complement-background-color: rgb(48, 129, 156);
+    --primary-background-color: rgba(236, 131, 5, 1);
+    --secondary-background-color: rgb(252, 181, 95);
+    --primary-text-color: rgb(0, 0, 0);
+    --nav-link-hover-color: rgb(2, 2, 49);
 }
 
 body {
+    background-color: var(--body-background-color);
+    margin: auto;
+    padding: 20px;
+    font-family: 'Nunito Sans', sans-serif;
+    max-width: 1200px;
+}
+
+main {
+    padding: 0 20px;
+}
+
+/* Headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Menu button hidden by default */
+.menu-button {
+    display: none;
+    background-color: var(--primary-background-color);
+    color: var(--primary-text-color);
+    border: none;
+    padding: 0.625rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+}
+
+/* Navigation */
+nav {
+    background-color: var(--primary-background-color);
+    padding: 10px;
+}
+
+.organizations,
+nav ul {
+    list-style-type: none;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav li,
+nav a {
+    padding: 10px 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--primary-text-color);
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--nav-link-hover-color);
+}
+
+nav li:hover {
+    background-color: var(--secondary-background-color);
+}
+
+/* Images */
+img {
+    display: block;
+    padding: 10px;
+    margin: auto;
+}
+
+.organizations li {
+    max-width: fit-content;
+    margin: auto;
+    padding-right: 40px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-background-color);
+    padding: 10px;
+    margin-top: 20px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+
+    body {
+        padding: 10px;
+    }
+
+    main {
+        padding: 0 0.625rem;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
     nav {
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
+    display: none;
+    padding: 0.625rem;
+    }
 
-        li {
-            display: inline;
-            margin-right: 15px;
-        }
-
-        a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-
-            &:hover {
-                color: #0066cc;
-            }
-        }
+    nav.show {
+        display: block;
+    }
+    
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav li {
+        display: block;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    nav a {
+        display: block;
+        width: 100%;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+        padding: 0.625rem 0;
+    }
+    
+    .organizations li {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    footer {
+        text-align: center;
     }
 }

@@ -1,6 +1,17 @@
 <footer>
     <p>&copy; <%= new Date().getFullYear() %> CSE 340 Service Network.</p>
 </footer>
+
+<!--Script to manage the button. This is temporary.-->
+<script>
+    const menuButton = document.getElementById('menuButton');
+    const mainNav = document.getElementById('mainNav');
+
+    menuButton.addEventListener('click', () => {
+        mainNav.classList.toggle('show');
+    });
+</script>
+
 </body>
 
 </html>
