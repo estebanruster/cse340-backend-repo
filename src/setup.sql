@@ -23,6 +23,25 @@ CREATE TABLE project (
 );
 
 -- ========================================
+-- Category Table
+-- ========================================
+CREATE TABLE category (
+    category_id SERIAL PRIMARY KEY,
+    category_name VARCHAR(75) NOT NULL
+);
+
+-- ========================================
+-- project_has_category "junction" Table
+-- ========================================
+CREATE TABLE project_has_category (
+    project_id INTEGER,
+	category_id INTEGER,
+    PRIMARY KEY (project_id, category_id),
+    FOREIGN KEY (project_id) REFERENCES project (project_id),
+	FOREIGN KEY (category_id) REFERENCES category (category_id)
+);
+
+-- ========================================
 -- Inserting organization data
 -- ========================================
 INSERT INTO organization VALUES
@@ -143,3 +162,42 @@ VALUES
     '2026-07-18',
     3
 );
+
+-- ========================================
+-- INSERTS FOR category TABLE
+-- ========================================
+INSERT INTO category (category_name)
+VALUES
+('Community Support'),
+('Education & Skills Development'),
+('Environment & Sustainability'),
+('Animal Welfare'),
+('Sports & Recreation'),
+('Infrastructure & Public Spaces');
+
+-- ========================================
+-- INSERTS FOR project_has_category TABLE
+-- ========================================
+INSERT INTO project_has_category (project_id, category_id)
+VALUES
+-- Community Support (category_id = 1)
+(1, 1),   -- Community Food Drive
+(4, 1),   -- Senior Care Visit Program
+(5, 1),   -- Community Health Fair
+(8, 1),   -- Homeless Shelter Support
+-- Education & Skills Development (category_id = 2)
+(2, 2),   -- School Supplies Donation
+(7, 2),   -- Youth Coding Workshop
+(10, 2),  -- Women Entrepreneurship Seminar
+(13, 2),  -- Free English Classes
+(15, 2),  -- Digital Literacy Program
+-- Environment & Sustainability (category_id = 3)
+(3, 3),   -- Tree Planting Initiative
+(6, 3),   -- Beach Cleanup Campaign
+(11, 3),  -- Water Conservation Awareness
+-- Animal Welfare (category_id = 4)
+(9, 4),   -- Animal Rescue Fundraiser
+-- Sports & Recreation (category_id = 5)
+(14, 5),  -- Neighborhood Sports Tournament
+-- Infrastructure & Public Spaces (category_id = 6)
+(12, 6);  -- Public Library Renovation
