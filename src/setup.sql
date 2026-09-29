@@ -59,35 +59,35 @@ VALUES
     'Community Food Drive',
     'Organized a city-wide food collection campaign for low-income families.',
     'Queretaro, Mexico',
-    '2026-05-25',
+    '2026-11-20',
     1
 ),
 (
     'School Supplies Donation',
     'Provided school materials and backpacks to children in rural communities.',
     'San Juan del Rio, Mexico',
-    '2026-06-05',
+    '2026-11-27',
     1
 ),
 (
     'Tree Planting Initiative',
     'Volunteers planted over 500 trees in public parks and green areas.',
     'Celaya, Mexico',
-    '2026-06-18',
+    '2026-11-11',
     1
 ),
 (
     'Senior Care Visit Program',
     'Weekly visits and recreational activities for senior citizens.',
     'Queretaro, Mexico',
-    '2026-07-02',
+    '2026-12-04',
     1
 ),
 (
     'Community Health Fair',
     'Free medical checkups and health education workshops for residents.',
     'Tequisquiapan, Mexico',
-    '2026-07-15',
+    '2026-12-11',
     1
 ),
 -- Projects for organization_id = 2
@@ -95,35 +95,35 @@ VALUES
     'Beach Cleanup Campaign',
     'Collected waste and promoted environmental awareness along the coastline.',
     'Cancun, Mexico',
-    '2026-05-30',
+    '2026-10-23',
     2
 ),
 (
     'Youth Coding Workshop',
     'Introduced programming basics and web development to teenagers.',
     'Monterrey, Mexico',
-    '2026-06-12',
+    '2026-12-18',
     2
 ),
 (
     'Homeless Shelter Support',
     'Prepared and distributed meals for homeless individuals.',
     'Guadalajara, Mexico',
-    '2026-06-25',
+    '2026-10-12',
     2
 ),
 (
     'Animal Rescue Fundraiser',
     'Raised funds for veterinary care and adoption programs.',
     'Puebla, Mexico',
-    '2026-07-08',
+    '2026-10-05',
     2
 ),
 (
     'Women Entrepreneurship Seminar',
     'Hosted workshops on business planning and financial literacy.',
     'Mexico City, Mexico',
-    '2026-07-20',
+    '2026-12-23',
     2
 ),
 -- Projects for organization_id = 3
@@ -131,35 +131,35 @@ VALUES
     'Water Conservation Awareness',
     'Educational campaign about reducing household water consumption.',
     'Leon, Mexico',
-    '2026-05-28',
+    '2026-11-04',
     3
 ),
 (
     'Public Library Renovation',
     'Restored reading spaces and donated new educational materials.',
     'Toluca, Mexico',
-    '2026-06-10',
+    '2026-11-16',
     3
 ),
 (
     'Free English Classes',
     'Provided beginner and intermediate English lessons for adults.',
     'Aguascalientes, Mexico',
-    '2026-06-22',
+    '2026-12-31',
     3
 ),
 (
     'Neighborhood Sports Tournament',
     'Organized sports competitions to encourage community participation.',
     'Merida, Mexico',
-    '2026-07-05',
+    '2026-10-30',
     3
 ),
 (
     'Digital Literacy Program',
     'Taught basic computer and internet skills to older adults.',
     'Tijuana, Mexico',
-    '2026-07-18',
+    '2026-10-19',
     3
 );
 
