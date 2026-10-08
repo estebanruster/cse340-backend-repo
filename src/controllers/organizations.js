@@ -1,5 +1,5 @@
 //Importing model functions and validation functions
-import { getAllOrganizations, getOrganizationDetails, createOrganization } from '../models/organizations.js';
+import { getAllOrganizations, getOrganizationDetails, createOrganization, updateOrganization } from '../models/organizations.js';
 import { getProjectsByOrganizationId } from '../models/projects.js';
 import { body, validationResult } from 'express-validator';
 
@@ -48,8 +48,18 @@ const showNewOrganizationForm = async (req, res) => {
     res.render('new-organization', { title });
 };
 
+//Edit organization controller function
+const showEditOrganizationForm = async (req, res) => {
+    const organizationId = req.params.id;
+    const organizationDetails = await getOrganizationDetails(organizationId);
+    const title = 'Edit Organization';
+
+    res.render('edit-organization', { title, organizationDetails });
+};
+
+// Post controller for the form submit in new organization
 const processNewOrganizationForm = async (req, res) => {
-    // Check for vlidation errors
+    // Check for validation errors
     const results = validationResult(req);
     if (!results.isEmpty()) {
         // Validation failed - loop through errors
@@ -71,4 +81,29 @@ const processNewOrganizationForm = async (req, res) => {
     res.redirect(`/organization/${organizationId}`);
 };
 
-export { showOrganizationsPage, showOrganizationDetailsPage, showNewOrganizationForm, processNewOrganizationForm, organizationValidation };
+// Post controller for the form in edit organization
+const processEditOrganizationForm = async (req, res) => {
+    // Check for validation errors
+    const results = validationResult(req);
+    if (!results.isEmpty()) {
+        // Validation failed - loop through errors
+        results.array().forEach((error) => {
+            req.flash('error', error.msg);
+        });
+        // Redirect back to the new organization form
+        return res.redirect(`/edit-organization/${req.params.id}`);
+    }
+
+    // Obtain the id from the route parameter
+    const organizationId = req.params.id;
+    // Obtain the data from the form
+    const { name, description, contactEmail, logoFilename } = req.body;
+    // Model function which passes the id and the data to update
+    await updateOrganization(organizationId, name, description, contactEmail, logoFilename);
+
+    // Set the flash message and redirect
+    req.flash('success', 'Organization updated successfully!');
+    res.redirect(`/organization/${organizationId}`);
+};
+
+export { showOrganizationsPage, showOrganizationDetailsPage, showNewOrganizationForm, processNewOrganizationForm, organizationValidation, showEditOrganizationForm, processEditOrganizationForm };
